@@ -1,0 +1,103 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Splotify Search</title>
+  
+  <!--jQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+  
+
+  <!--Stylesheets and fonts-->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+<div class="container-fluid">
+  <div class="row title-bar">
+  <div class="col-12-lg title-bar">
+    <h1>Splotify</h1>
+
+    <form class="artist-search" action="index.html" method="POST">
+      <input type="text" name="artist" id="artist" placeholder="Search for an artist...">
+
+      <button id="submit" type="submit" name="button">Search</button>
+    </form>
+  </div>
+  </div>
+</div>
+</header>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+        <div class=" container-fluid player-screen pre-scrollable">
+          <div class="col-12-lg">
+            <div class=" row metadata">
+              <p class="title">Track Title</p>
+              <p class="author">Artist</p>
+
+              <div class="seekbar">
+                <progress value="0" max="30"></progress>
+              </div>
+            </div>
+            <div class="js-track-list"></div>
+          </div>
+          <!-- <h4 class="modal-title" id="myModalLabel">Track List</h4> -->
+        </div>
+      </div>
+      <div class="modal-body">
+                <!-- Player -->
+        <div class="widget">
+        <div class="btn-play disabled"></div>
+        <audio></audio>
+        </div>
+
+        <!-- End of player -->
+        
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row display">
+    <div class="col-8-lg js-album-list">
+    </div>
+    <div class="col-4-lg js-artist-list">
+    </div>
+
+  </div>
+</div>
+
+<footer class="container-fluid">
+  <div class="row footer">
+    <div class="col-12-lg">
+      <p>Built by Zoe Thorne @Ironhack 2016</p>
+    </div>
+  </div>
+</footer>
+<!--Javascript-->
+  <script type="text/javascript" src="ooindex.js"></script>
+</body>
+</html>
